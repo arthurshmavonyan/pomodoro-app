@@ -1,0 +1,39 @@
+.title {
+    font-size: 20px;
+    list-style-type: none;
+}
+.div {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin: 10px auto;
+    padding: 10px;
+    width: 35%;
+    min-width: 300px;
+    position: relative;
+}
+.button {
+    border: none;
+    background: none;
+    font-size: 15px;
+}
+.button:hover {
+    color: red;
+}
+
+.divDone {
+    animation: fadeIn 5s;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-left: 7px solid #77d579;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin: 10px auto;
+    padding: 10px;
+    width: 35%;
+    min-width: 300px;
+    position: relative;
+}

@@ -1,0 +1,12 @@
+.button {
+    color: #3f3f3f;
+    background: none;
+    border: none;
+    padding: 8px 10px 0 0;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+}
+.button:hover {
+    color: darkgrey;
+}

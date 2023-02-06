@@ -1,0 +1,41 @@
+.timer {
+    text-align: center;
+    font-size: 100px;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+
+.start {
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+.stop {
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+
+.start:hover {
+    color: dimgrey;
+}
+
+.start:active {
+    color: #2eb62e;
+}
+
+.stop:hover {
+    color: dimgrey;
+}
+
+.stop:active {
+    color: #ea0000;
+}
+
+.buttons {
+    text-align: center;
+}
