@@ -17,7 +17,7 @@ const Tasks = () => {
         return data;
     }
 
-    let list = data.map(element => <Task title={element.name} removeHandler={()=>removeHandler(element.id)}></Task>)
+    let list = data.map(element => <Task key={Math.random()} title={element.name} removeHandler={()=>removeHandler(element.id)}></Task>)
 
     return (
         <Fragment>

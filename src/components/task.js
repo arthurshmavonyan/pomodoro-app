@@ -10,7 +10,7 @@ const Task = (props) => {
 
     return (
         <div>
-            <div className={!done? classes.div : classes.divDone} onClick={doneHandler}>
+            <div className={!done ? classes.div : classes.divDone} onClick={doneHandler}>
                 <li className={classes.title}>{props.title}</li>
                 <button onClick={props.removeHandler} className={classes.button}>remove</button>
             </div>

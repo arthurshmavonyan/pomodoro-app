@@ -2,7 +2,8 @@ import Card from "./UI/card";
 import {useState, useEffect, useRef, useContext} from "react";
 import classes from "./timer.module.css";
 import Settings from "./settings";
-import ModalContext from "../context/ModalContext";
+import {ModalContext} from "../context/ModalContext";
+import alarm from '../audio/house_alarm-clock_loud-92419.mp3'
 
 const Timer = (props) => {
 
@@ -10,21 +11,37 @@ const Timer = (props) => {
     const [countdown, setCountdown] = useState(timers.pomodoroTimer); // 25 minutes
     const [isRunning, setIsRunning] = useState(false)
     const timerId = useRef(null);
+    const timerTypeIsPom = useRef(true);
+    const audioRef = useRef(alarm);
+
+    useEffect(()=>{
+        audioRef.current = new Audio(alarm);
+    },[])
 
     useEffect(() => {
-        setCountdown(timers.pomodoroTimer);
-    }, [timers.pomodoroTimer]);
+        if (timerTypeIsPom.current){
+            setCountdown(() => timers.pomodoroTimer)
+        }
+        else if (timerTypeIsPom.current === false){
+            setCountdown(() => timers.breakTimer)
+        }
+    }, [timers.pomodoroTimer, timers.breakTimer, timerTypeIsPom.current]);
 
     useEffect(() => {
         if (isRunning) {
             timerId.current = setInterval(() => {
-                setCountdown((prevCount) => prevCount - 1);
+                setCountdown((prevCount) => {
+                    if(prevCount > 0) {
+                        return prevCount - 1;
+                    }
+                    else {
+                        clearInterval(timerId.current);
+                        audioRef.current.play();
+                        timerTypeIsPom.current = !timerTypeIsPom.current;
+                        setIsRunning(!isRunning)
+                    }
+                });
             }, 1000);
-            if (countdown === 0) {
-                clearInterval(timerId.current);
-                timerId.current = null;
-                alert("Time's up!");
-            }
         } else {
             clearInterval(timerId.current);
             timerId.current = null;

@@ -2,6 +2,7 @@
     font-size: 20px;
     list-style-type: none;
 }
+
 .div {
     display: flex;
     justify-content: space-between;
@@ -14,11 +15,13 @@
     min-width: 300px;
     position: relative;
 }
+
 .button {
     border: none;
     background: none;
     font-size: 15px;
 }
+
 .button:hover {
     color: red;
 }

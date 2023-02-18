@@ -8,6 +8,7 @@
     width: 40%;
     min-width: 200px;
 }
+
 .button {
     border-radius: 3px;
     border: none;
@@ -15,9 +16,11 @@
     font-size: 20px;
     margin-bottom: 10px;
 }
+
 .button:hover {
     color: dimgrey;
 }
+
 .form {
     text-align: center;
 }

@@ -1,13 +1,12 @@
 import SettingsForm from "./settingsForm";
 import classes from "./modal.module.css";
-import {useState} from "react";
 
 const Modal = (props) => {
 
     return (
         <div className={classes.modal} onClick={props.closeHandler}>
             <div className={classes.modal__container} onClick={e => e.stopPropagation()}>
-               <SettingsForm pomodoro={props.pomodoro} break={props.break} close={props.closeHandler}/>
+                <SettingsForm pomodoro={props.pomodoro} break={props.break} close={props.closeHandler}/>
             </div>
         </div>
     );
